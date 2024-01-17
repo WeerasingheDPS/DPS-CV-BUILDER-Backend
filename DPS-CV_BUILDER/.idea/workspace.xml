@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb40f62b-46bb-421c-94b2-a7909945c34b" name="Changes" comment="Initiation-">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/DpsCvBuilderApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/dto/error/ErrorDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/exception/DreamHireException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/exception/DreamHireValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/model/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/model/CvCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/model/Resume.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/model/SystemUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/model/ro/resume/MainContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/model/ro/resume/PersonalData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/model/ro/resume/SubContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/util/constant/UrlConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/util/enums/CandidateType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/util/enums/ErrorEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/util/enums/UserType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/util/response/StandardResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DPS-CV-BUILDER/src/main/java/dpscvbuilder/example/DPSCVBUILDER/ServletInitializer.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +32,7 @@
   "associatedIndex": 1
 }]]></component>
   <component name="ProjectId" id="2b5YsMCDuIFP296Fbu27iOHJ5Pg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -69,6 +55,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -96,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1705506613754</updated>
-      <workItem from="1705506614793" duration="1073000" />
+      <workItem from="1705506614793" duration="1396000" />
     </task>
     <servers />
   </component>
