@@ -21,7 +21,7 @@ public class Resume extends BaseEntity {
 
     @Indexed(unique = true)
     @Field(name = "user_id")
-    private int userId;
+    private String userId;
 
     private PersonalData personalData;
 
