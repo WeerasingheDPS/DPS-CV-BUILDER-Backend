@@ -23,6 +23,7 @@ public class AuthConfig {
 
     @Autowired
     private JwtFilter jwtFilter;
+
     @Bean
     public UserDetailsService userDetailsService(){
         return new CustomUserDetailsService();
@@ -34,7 +35,7 @@ public class AuthConfig {
                 .cors()
                 .and()
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers( "api/v1/cvCreator/register", "api/v1/auth/login").permitAll()
+                        .requestMatchers("/api/v1/auth/**", "/api/v1/cvCreator/register").permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .httpBasic();

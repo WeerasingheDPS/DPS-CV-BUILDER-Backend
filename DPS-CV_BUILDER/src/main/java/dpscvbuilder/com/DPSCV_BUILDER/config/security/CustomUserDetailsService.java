@@ -1,6 +1,6 @@
 package dpscvbuilder.com.DPSCV_BUILDER.config.security;
 
-import dpscvbuilder.com.DPSCV_BUILDER.model.SystemUser;
+import dpscvbuilder.com.DPSCV_BUILDER.model.User;
 import dpscvbuilder.com.DPSCV_BUILDER.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,7 +18,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Optional<SystemUser> user = userRepo.findByEmail(email);
+        Optional<User> user = userRepo.findByEmail(email);
         return user.map(CustomUserDetails::new).orElseThrow(()-> new UsernameNotFoundException("user not found with email: "+ email));
     }
 }

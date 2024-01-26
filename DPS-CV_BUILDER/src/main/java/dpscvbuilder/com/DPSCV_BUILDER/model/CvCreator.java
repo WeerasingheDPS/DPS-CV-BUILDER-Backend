@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Document(collection = "cv_creators")
 @AllArgsConstructor
 @NoArgsConstructor
-public class CvCreator extends SystemUser {
+public class CvCreator extends User {
 
 
     private String title;

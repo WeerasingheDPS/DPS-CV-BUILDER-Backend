@@ -4,6 +4,7 @@ package dpscvbuilder.com.DPSCV_BUILDER.controller;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.resume.CvCreatorMainContentDto;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.resume.CvCreatorPersonalDataRequestDto;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.resume.ResumeDto;
+import dpscvbuilder.com.DPSCV_BUILDER.model.Resume;
 import dpscvbuilder.com.DPSCV_BUILDER.service.ResumeService;
 import dpscvbuilder.com.DPSCV_BUILDER.util.constant.UrlConstant;
 import dpscvbuilder.com.DPSCV_BUILDER.util.response.StandardResponse;
@@ -48,7 +49,7 @@ public class ResumeController {
 
     @GetMapping("/{userId}")
     public ResponseEntity<StandardResponse> getResume(@PathVariable String userId) {
-     ResumeDto resume = resumeService.getResume(userId);
+     Resume resume = resumeService.getResume(userId);
         return new ResponseEntity<StandardResponse>(
                 StandardResponse
                         .builder()

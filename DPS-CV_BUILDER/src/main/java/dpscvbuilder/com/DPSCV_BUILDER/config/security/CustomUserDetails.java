@@ -1,7 +1,7 @@
 package dpscvbuilder.com.DPSCV_BUILDER.config.security;
 
 
-import dpscvbuilder.com.DPSCV_BUILDER.model.SystemUser;
+import dpscvbuilder.com.DPSCV_BUILDER.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +14,7 @@ public class CustomUserDetails implements UserDetails {
     private String password;
     private String userType;
 
-    public  CustomUserDetails (SystemUser user){
+    public  CustomUserDetails (User user){
         this.email = user.getEmail();
         this.password = user.getPassword();
         this.userType = user.getUserType();

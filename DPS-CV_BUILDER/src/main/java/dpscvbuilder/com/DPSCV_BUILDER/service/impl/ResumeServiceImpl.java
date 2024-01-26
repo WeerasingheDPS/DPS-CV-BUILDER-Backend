@@ -67,10 +67,10 @@ public class ResumeServiceImpl implements ResumeService {
     }
 
     @Override
-    public ResumeDto getResume(String userId) {
+    public Resume getResume(String userId) {
         Resume resume = resumeRepo.findByUserId(userId);
-        ResumeDto resumeDto = modelMapper.map(resume, ResumeDto.class);
-        return resumeDto;
+        //ResumeDto resumeDto = modelMapper.map(resume, ResumeDto.class);
+        return resume;
     }
 
     private List<MainContent> mapToMainContentList(List<CvCreatorMainContentDto> mainContentDtos) {

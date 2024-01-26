@@ -1,6 +1,6 @@
 package dpscvbuilder.com.DPSCV_BUILDER.dto.response;
 
-import dpscvbuilder.com.DPSCV_BUILDER.model.SystemUser;
+import dpscvbuilder.com.DPSCV_BUILDER.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LoginResponseDto {
 
-    private String token;
-    private SystemUser user;
+    private String accessToken;
+    private String refreshToken;
+    private User user;
 }

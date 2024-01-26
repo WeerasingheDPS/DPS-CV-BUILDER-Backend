@@ -26,8 +26,9 @@ public class CvCreatorServiceImpl implements CvCreatorService {
     public CvCreatorDto register(CvCreatorRegisterDto registerDto) {
         if(userRepo.existsByEmailAndUserType(registerDto.getEmail(), "ROLE_" + UserType.CV_CREATOR)){
             throw new DreamHireException(ErrorEnum.ERROR_DUPLICATE_EMAIL,
-                    "You are already registered with this email: " +
-                            registerDto.getEmail());
+                    "You are already registered with this email: "
+                            + registerDto.getEmail())
+                    ;
         }
         CvCreator cvCreator = new CvCreator();
         cvCreator.setEmail(registerDto.getEmail());
