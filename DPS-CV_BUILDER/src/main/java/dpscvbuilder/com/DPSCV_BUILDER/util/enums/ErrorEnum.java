@@ -15,6 +15,7 @@ public enum ErrorEnum {
     ERROR_DUPLICATE_ID(40004,"ERROR_DUPLICATE_ID", "Duplicate Id:", HttpStatus.BAD_REQUEST),
     ERROR_EXPIRE_TOKEN(40005,"ERROR_EXPIRE_TOKEN", "Token is expired!", HttpStatus.BAD_REQUEST),
     ERROR_NOT_FOUND(40006,"ERROR_NOT_FOUND", "Error Not Found!", HttpStatus.NOT_FOUND),
+    ERROR_INVALID_PASSWORD(40006,"ERROR_INVALID_PASSWORD", "Error Invalid Password!", HttpStatus.BAD_REQUEST),
 
     ;
     @Getter

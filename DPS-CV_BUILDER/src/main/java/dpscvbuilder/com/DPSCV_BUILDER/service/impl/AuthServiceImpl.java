@@ -1,5 +1,6 @@
 package dpscvbuilder.com.DPSCV_BUILDER.service.impl;
 import dpscvbuilder.com.DPSCV_BUILDER.config.security.CustomUserDetailsService;
+import dpscvbuilder.com.DPSCV_BUILDER.dto.request.ChangePasswordRequestDto;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.LoginRequest;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.RefreshTokenRequest;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.response.LoginResponseDto;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -24,6 +26,8 @@ public class AuthServiceImpl implements AuthService {
     private JwtService jwtService;
     @Autowired
     private UserRepo userRepo;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     @Autowired
     private CustomUserDetailsService userDetailsService;
     @Autowired
@@ -53,6 +57,22 @@ public class AuthServiceImpl implements AuthService {
         }
         return null;
     }
+
+    public String changePassword(ChangePasswordRequestDto changePasswordRequest, String userId) {
+        if(userRepo.existsById(userId)){
+            User user = userRepo.findById(userId).get();
+            if(passwordEncoder.matches(changePasswordRequest.getOldPassword(), user.getPassword())){
+                user.setPassword(passwordEncoder.encode(changePasswordRequest.getNewPassword()));
+                userRepo.save(user);
+                return "Password is changed successfully";
+            }else{
+                throw new DreamHireException(ErrorEnum.ERROR_INVALID_PASSWORD, "Password is incorrect! Try again!");
+            }
+        }else {
+            throw new DreamHireException(ErrorEnum.ERROR_NOT_FOUND, "User is not found with id:" + userId);
+        }
+    }
+
 
     private String generateAccessToken(String email) {
         return jwtService.generateAccessToken(email);

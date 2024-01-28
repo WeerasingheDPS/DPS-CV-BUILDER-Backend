@@ -1,4 +1,5 @@
 package dpscvbuilder.com.DPSCV_BUILDER.controller;
+import dpscvbuilder.com.DPSCV_BUILDER.dto.request.ChangePasswordRequestDto;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.LoginRequest;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.RefreshTokenRequest;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.response.LoginResponseDto;
@@ -36,6 +37,18 @@ public class AuthController {
                 StandardResponse
                         .builder()
                         .result(token)
+                        .success(true)
+                        .build(),
+                HttpStatus.OK);
+    }
+
+    @PostMapping( "/change_password/{userId}")
+    public ResponseEntity<StandardResponse> changePassword(@RequestBody ChangePasswordRequestDto changePasswordRequest, @PathVariable String userId){
+        String message = authService.changePassword(changePasswordRequest, userId);
+        return new ResponseEntity<StandardResponse>(
+                StandardResponse
+                        .builder()
+                        .result(message)
                         .success(true)
                         .build(),
                 HttpStatus.OK);

@@ -4,28 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7990ce32-ad26-4c1a-b605-c9bc8143c8c3" name="Changes" comment="Create package structure">
-      <changelist_data name="Dulanjana Weerasinghe" email="87292444+weerasinghedps@users.noreply.github.com" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/dto/request/RefreshTokenRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/exception/global/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7990ce32-ad26-4c1a-b605-c9bc8143c8c3" name="Changes" comment="Add refresh token">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/dto/request/ChangePasswordRequestDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/config/security/AuthConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/config/security/AuthConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/config/security/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/config/security/CustomUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/config/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/config/security/CustomUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/ResumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/ResumeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/dto/response/LoginResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/dto/response/LoginResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/model/CvCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/model/CvCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/model/SystemUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/dto/request/CvCreatorRegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/dto/request/CvCreatorRegisterDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/repository/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/repository/UserRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/ResumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/ResumeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/CvCreatorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/CvCreatorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/JwtServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/JwtServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/ResumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/ResumeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/util/enums/ErrorEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/util/enums/ErrorEnum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +107,8 @@
       <workItem from="1706068399216" duration="13000" />
       <workItem from="1706108497910" duration="4436000" />
       <workItem from="1706178609309" duration="3526000" />
+      <workItem from="1706274212788" duration="1586000" />
+      <workItem from="1706442833739" duration="4177000" />
     </task>
     <task id="LOCAL-00001" summary="Create package structure">
       <option name="closed" value="true" />
@@ -144,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705513162352</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add refresh token">
+      <option name="closed" value="true" />
+      <created>1706274538188</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706274538189</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +150,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create package structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create package structure" />
+    <MESSAGE value="Add refresh token" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add refresh token" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
@@ -163,8 +162,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="12" />
+          <line>62</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
