@@ -1,6 +1,7 @@
 package dpscvbuilder.com.DPSCV_BUILDER.controller;
 
 
+import dpscvbuilder.com.DPSCV_BUILDER.dto.request.ResumeDownloadRequestDto;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.resume.CvCreatorMainContentDto;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.resume.CvCreatorPersonalDataRequestDto;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.resume.ResumeDto;
@@ -56,6 +57,18 @@ public class ResumeController {
                         .result(resume)
                         .success(true)
                         .build(), HttpStatus.OK
+        );
+    }
+
+    @PostMapping("/download/{userId}")
+    public ResponseEntity<StandardResponse> downloadResume(@PathVariable String userId, @RequestBody ResumeDownloadRequestDto resume) {
+        String message = resumeService.download(resume.getResume());
+        return new ResponseEntity<StandardResponse>(
+                StandardResponse
+                        .builder()
+                        .result(message)
+                        .success(true)
+                        .build(), HttpStatus.CREATED
         );
     }
 }

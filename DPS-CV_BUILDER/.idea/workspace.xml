@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7990ce32-ad26-4c1a-b605-c9bc8143c8c3" name="Changes" comment="Add refresh token">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/dto/request/ChangePasswordRequestDto.java" afterDir="false" />
+    <list default="true" id="7990ce32-ad26-4c1a-b605-c9bc8143c8c3" name="Changes" comment="Add change password">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/dto/request/ResumeDownloadRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/PdfGenerateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/PdfGenerateServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/config/security/AuthConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/config/security/AuthConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/dto/request/CvCreatorRegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/dto/request/CvCreatorRegisterDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/repository/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/repository/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/util/enums/ErrorEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/util/enums/ErrorEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/ResumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/ResumeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/ResumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/ResumeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/ResumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/ResumeServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +69,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -108,7 +108,15 @@
       <workItem from="1706108497910" duration="4436000" />
       <workItem from="1706178609309" duration="3526000" />
       <workItem from="1706274212788" duration="1586000" />
-      <workItem from="1706442833739" duration="4177000" />
+      <workItem from="1706442833739" duration="4895000" />
+      <workItem from="1706496515472" duration="105000" />
+      <workItem from="1706679757321" duration="453000" />
+      <workItem from="1706880498525" duration="9517000" />
+      <workItem from="1707140174366" duration="1324000" />
+      <workItem from="1707141971153" duration="735000" />
+      <workItem from="1707190158791" duration="43000" />
+      <workItem from="1707198920181" duration="33000" />
+      <workItem from="1707199045876" duration="616000" />
     </task>
     <task id="LOCAL-00001" summary="Create package structure">
       <option name="closed" value="true" />
@@ -142,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706274538189</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add change password">
+      <option name="closed" value="true" />
+      <created>1706456357884</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706456357884</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +167,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create package structure" />
     <MESSAGE value="Add refresh token" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add refresh token" />
+    <MESSAGE value="Add change password" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add change password" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
@@ -161,29 +178,44 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="14" />
+          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/ResumeController.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/ResumeServiceImpl.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/PdfGenerateServiceImpl.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/PdfGenerateServiceImpl.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/AuthServiceImpl.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="19" />
+          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/PdfGenerateServiceImpl.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/AuthController.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/CvCreatorController.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/CvCreatorServiceImpl.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -14,4 +14,6 @@ public interface ResumeService {
     String saveMainContentData(List<CvCreatorMainContentDto> mainContentDtos, String id);
 
     Resume getResume(String userId);
+
+    String download(String resume);
 }

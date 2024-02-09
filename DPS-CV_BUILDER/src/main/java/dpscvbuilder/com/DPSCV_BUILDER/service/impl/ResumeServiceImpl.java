@@ -9,6 +9,7 @@ import dpscvbuilder.com.DPSCV_BUILDER.model.ro.resume.MainContent;
 import dpscvbuilder.com.DPSCV_BUILDER.model.ro.resume.PersonalData;
 import dpscvbuilder.com.DPSCV_BUILDER.repository.ResumeRepo;
 import dpscvbuilder.com.DPSCV_BUILDER.repository.UserRepo;
+import dpscvbuilder.com.DPSCV_BUILDER.service.PdfGenerateService;
 import dpscvbuilder.com.DPSCV_BUILDER.service.ResumeService;
 import dpscvbuilder.com.DPSCV_BUILDER.util.enums.ErrorEnum;
 import org.modelmapper.ModelMapper;
@@ -30,8 +31,10 @@ public class ResumeServiceImpl implements ResumeService {
     @Autowired
     private ModelMapper modelMapper;
 
+    @Autowired
+    private PdfGenerateService pdfGenerateService;
 
-    @Override
+
     public String savePersonalData(CvCreatorPersonalDataRequestDto personalDataRequestDto, String id) {
         if(userRepo.existsById(id)){
             if(resumeRepo.existsByUserId(id)){
@@ -49,7 +52,6 @@ public class ResumeServiceImpl implements ResumeService {
 
     }
 
-    @Override
     public String saveMainContentData(List<CvCreatorMainContentDto> mainContentDtos, String id) {
         if(userRepo.existsById(id)){
             if(resumeRepo.existsByUserId(id)){
@@ -66,11 +68,15 @@ public class ResumeServiceImpl implements ResumeService {
         }else throw new DreamHireException(ErrorEnum.ERROR_NOT_FOUND, "User is Not_Found with userId: " + id);
     }
 
-    @Override
     public Resume getResume(String userId) {
         Resume resume = resumeRepo.findByUserId(userId);
         //ResumeDto resumeDto = modelMapper.map(resume, ResumeDto.class);
         return resume;
+    }
+
+    public String download(String resume) {
+        String message = pdfGenerateService.generate(resume);
+        return null;
     }
 
     private List<MainContent> mapToMainContentList(List<CvCreatorMainContentDto> mainContentDtos) {
