@@ -131,6 +131,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>dps_cv_builder</finalName>
 	</build>
 
 </project>

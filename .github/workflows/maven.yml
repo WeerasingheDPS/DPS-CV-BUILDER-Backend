@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
@@ -33,10 +33,10 @@ jobs:
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
-            image: repo/image
-            tags: v1, latest
-            registry: registry-url.io
-            dockerfile: Dockerfile.ci
+            image: dpsweerasinghe/dps_cv_builder
+            tags: latest
+            registry: docker.io
+            dockerfile: Dockerfile
             username: ${{ secrets.DOCKER_USERNAME }}
             password: ${{ secrets.DOCKER_PASSWORD }}
 
