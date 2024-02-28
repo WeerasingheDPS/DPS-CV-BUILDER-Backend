@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7990ce32-ad26-4c1a-b605-c9bc8143c8c3" name="Changes" comment="Add change password">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/dto/request/ResumeDownloadRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/PdfGenerateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/PdfGenerateServiceImpl.java" afterDir="false" />
+    <list default="true" id="7990ce32-ad26-4c1a-b605-c9bc8143c8c3" name="Changes" comment="update save resume">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/ResumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/controller/ResumeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/ResumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/ResumeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/ResumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dpscvbuilder/com/DPSCV_BUILDER/service/impl/ResumeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +111,18 @@
       <workItem from="1707190158791" duration="43000" />
       <workItem from="1707198920181" duration="33000" />
       <workItem from="1707199045876" duration="616000" />
+      <workItem from="1707482713776" duration="2616000" />
+      <workItem from="1707741303037" duration="907000" />
+      <workItem from="1707793872963" duration="55000" />
+      <workItem from="1708003142430" duration="623000" />
+      <workItem from="1708057048505" duration="6000" />
+      <workItem from="1708089698601" duration="3818000" />
+      <workItem from="1708348839300" duration="1512000" />
+      <workItem from="1708399395694" duration="13000" />
+      <workItem from="1708437059150" duration="2172000" />
+      <workItem from="1708485012773" duration="220000" />
+      <workItem from="1708532141007" duration="982000" />
+      <workItem from="1708571234162" duration="35000" />
     </task>
     <task id="LOCAL-00001" summary="Create package structure">
       <option name="closed" value="true" />
@@ -158,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706456357884</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update save resume">
+      <option name="closed" value="true" />
+      <created>1707492742255</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707492742255</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +182,8 @@
     <MESSAGE value="Create package structure" />
     <MESSAGE value="Add refresh token" />
     <MESSAGE value="Add change password" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add change password" />
+    <MESSAGE value="update save resume" />
+    <option name="LAST_COMMIT_MESSAGE" value="update save resume" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
