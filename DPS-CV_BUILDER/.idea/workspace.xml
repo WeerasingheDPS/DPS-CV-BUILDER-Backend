@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7990ce32-ad26-4c1a-b605-c9bc8143c8c3" name="Changes" comment="update save resume">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="7990ce32-ad26-4c1a-b605-c9bc8143c8c3" name="Changes" comment="add workflow">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +122,7 @@
       <workItem from="1708485012773" duration="220000" />
       <workItem from="1708532141007" duration="982000" />
       <workItem from="1708571234162" duration="35000" />
+      <workItem from="1709040349954" duration="2397000" />
     </task>
     <task id="LOCAL-00001" summary="Create package structure">
       <option name="closed" value="true" />
@@ -172,7 +172,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707492742255</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add workflow">
+      <option name="closed" value="true" />
+      <created>1709085489549</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1709085489549</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add workflow">
+      <option name="closed" value="true" />
+      <created>1709086770040</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1709086770040</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +199,8 @@
     <MESSAGE value="Add refresh token" />
     <MESSAGE value="Add change password" />
     <MESSAGE value="update save resume" />
-    <option name="LAST_COMMIT_MESSAGE" value="update save resume" />
+    <MESSAGE value="add workflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="add workflow" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
