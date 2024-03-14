@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Links</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Bootstrap Icons library -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+   
+</head>
+<body>
+    <div class="main-con">
+        <div class="personal-main-con">
+            <div class="personal-details-con">
+                <div class="name">
+                    <h1 >Dulanjana Weerasinghe</h1>
+                </div>
+                
+                <div class="job-title">
+                    <h2>Software Engineer Intern</h2>
+                </div>
+
+                <div class="personal-sub-con">
+                    <i class="bi bi-envelope-fill icon"></i>
+                    <p>dpsweerasinghe@gmail.com</p>
+                </div>
+
+                <div class="personal-sub-con">
+                    <i class="bi bi-telephone-fill icon"></i>
+                    <p>0712905022</p>
+                </div>
+
+                <div class="personal-sub-con">
+                    <i class="bi bi-geo-alt-fill icon"></i>
+                    <p>Galhena, Bathigama, Dickwella, Sri Lanka.</p>
+                </div>
+
+                <div class="personal-sub-con">
+                    <i class="bi bi-github icon"></i>
+                    <a class="link" href="www.google.com">WeerasingheDPS</a>
+                </div>
+
+                <div class="personal-sub-con">
+                    <i class="bi bi-linkedin icon"></i>
+                    <a class="link">Dulanjana Weerasinghe</a>
+                </div>
+
+                <div class="personal-sub-con">
+                    <i class="bi bi-twitter icon"></i>
+                    <a class="link">Dula98</a>
+                </div>
+            </div>
+            <div class="photo-con">
+                <img src="dula.png" class="photo">
+            </div>
+        </div>
+        <div class="content-con">
+            <h3 class="content-main-title">Education</h3>
+
+            <div class="hr2"></div>
+
+            <div class="content-main-con">
+                <div class="con-title-con">
+                    <h5 class="content-title">BSc in Computer Science</h5>
+                    <p>University of Colombo School of Computing</p>
+                </div>
+                
+                <div class="date-city">
+                    <div class="date">
+                        2019 - 2023
+                    </div>
+                    <div class="city">
+                        Colombo, Sri Lanka.
+                    </div>
+                </div>
+            </div>
+            <div class="description-con">
+                <p>Dedicated third-year Computer Science student with a fervent drive for exceptional programming,
+                    machine learning, and web development skills. Adept at innovative problem-solving and deeply
+                    enthusiastic about coding. Aspiring Software Engineer with a passion for continuous learning, travel,
+                    and exploring new horizons. Eager to fuse these interests into a successful career.</p>
+            </div>
+            <div da class="quilt-con" id="quill">
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the HTML content from Quill and set it to the output div
+        function updateOutput() {
+            var html = '<p>Hello!dnewfoforfo</p>';
+            document.getElementById('quill').innerHTML = html;
+        }
+        // Initial update
+        updateOutput();
+    </script>
+
+</body>
+</html>

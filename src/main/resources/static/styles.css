@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.main-con{
+    width: 1200px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    border: 2px solid black;
+}
+.personal-main-con{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.personal-details-con{
+    width: 70%;
+    display: flexbox;
+    flex-direction: row;
+   }
+.name{
+    margin-bottom: 15px;
+}
+.job-title{
+    margin-bottom: 25px;
+}
+.photo-con{
+    width: 15%;
+  
+}
+
+.photo{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.personal-sub-con{
+    display: flex;
+    flex-direction: row;
+    display: inline-flex;
+    margin-right: 10px;
+
+}
+.icon{
+    margin-right: 5px;
+}
+
+.link{
+    text-decoration: none;
+    color: #000;
+}
+
+.content-con{
+    width: 100%;
+    margin-top: 30px;
+}
+
+.content-main-title{
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.hr2{
+    margin: 0;
+    height: 2px;
+    background-color: #000;
+    margin-bottom: 20px;
+}
+
+.content-main-con{
+   
+    display: flex;
+    flex-direction: row;
+}
+
+.con-title-con{
+    width: 80%;
+
+}
+
+.content-title{
+    margin: 0;
+}
+
+.date-city{
+    width: 20%;
+}
+
+.date{
+    display: block;
+    display: flex;
+    justify-content: end;
+}
+
+.city{
+    display: block;
+    display: flex;
+    justify-content: end;
+}
+
+.sub-title-con{
+    display: block;
+}
+
+.sub-title{
+
+}
+
+.description-con{
+    display: block;
+}
+
+.quilt-con{
+    display: block;
+}
