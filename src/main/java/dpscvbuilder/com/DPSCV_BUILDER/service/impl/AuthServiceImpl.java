@@ -4,7 +4,7 @@ import dpscvbuilder.com.DPSCV_BUILDER.dto.request.ChangePasswordRequestDto;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.LoginRequest;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.RefreshTokenRequest;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.response.LoginResponseDto;
-import dpscvbuilder.com.DPSCV_BUILDER.exception.DreamHireException;
+import dpscvbuilder.com.DPSCV_BUILDER.exception.DpsCvBuilderException;
 import dpscvbuilder.com.DPSCV_BUILDER.model.User;
 import dpscvbuilder.com.DPSCV_BUILDER.repository.UserRepo;
 import dpscvbuilder.com.DPSCV_BUILDER.service.AuthService;
@@ -16,8 +16,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.HashMap;
 
 @Service
 public class AuthServiceImpl implements AuthService {
@@ -43,7 +41,7 @@ public class AuthServiceImpl implements AuthService {
             String refreshToken = generateRefreshToken(loginRequest.getEmail());
             User user = getUser(loginRequest.getEmail());
             return new LoginResponseDto(accessToken, refreshToken, user);
-        }else throw new DreamHireException(ErrorEnum.ERROR_INVALID_EMAIL_OR_PASSWORD,
+        }else throw new DpsCvBuilderException(ErrorEnum.ERROR_INVALID_EMAIL_OR_PASSWORD,
                 "Invalid email or password!");
 
     }
@@ -66,10 +64,10 @@ public class AuthServiceImpl implements AuthService {
                 userRepo.save(user);
                 return "Password is changed successfully";
             }else{
-                throw new DreamHireException(ErrorEnum.ERROR_INVALID_PASSWORD, "Password is incorrect! Try again!");
+                throw new DpsCvBuilderException(ErrorEnum.ERROR_INVALID_PASSWORD, "Password is incorrect! Try again!");
             }
         }else {
-            throw new DreamHireException(ErrorEnum.ERROR_NOT_FOUND, "User is not found with id:" + userId);
+            throw new DpsCvBuilderException(ErrorEnum.ERROR_NOT_FOUND, "User is not found with id:" + userId);
         }
     }
 

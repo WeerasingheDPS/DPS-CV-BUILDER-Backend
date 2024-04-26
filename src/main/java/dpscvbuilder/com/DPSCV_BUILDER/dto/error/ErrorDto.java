@@ -1,6 +1,6 @@
 package dpscvbuilder.com.DPSCV_BUILDER.dto.error;
 
-import dpscvbuilder.com.DPSCV_BUILDER.exception.DreamHireException;
+import dpscvbuilder.com.DPSCV_BUILDER.exception.DpsCvBuilderException;
 import dpscvbuilder.com.DPSCV_BUILDER.util.enums.ErrorEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,7 +22,7 @@ public class ErrorDto {
     private String description;
 
 
-    public static  ErrorDto generateFromDreamHireException(final DreamHireException ex){
+    public static  ErrorDto generateFromDreamHireException(final DpsCvBuilderException ex){
         var error = ErrorDto.builder();
 
         error.errorCode(ex.getErrorCode())

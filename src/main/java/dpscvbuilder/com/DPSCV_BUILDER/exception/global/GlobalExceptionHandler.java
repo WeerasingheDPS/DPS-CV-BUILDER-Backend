@@ -1,8 +1,8 @@
 package dpscvbuilder.com.DPSCV_BUILDER.exception.global;
 
 import dpscvbuilder.com.DPSCV_BUILDER.dto.error.ErrorDto;
-import dpscvbuilder.com.DPSCV_BUILDER.exception.DreamHireException;
-import dpscvbuilder.com.DPSCV_BUILDER.exception.DreamHireValidationException;
+import dpscvbuilder.com.DPSCV_BUILDER.exception.DpsCvBuilderException;
+import dpscvbuilder.com.DPSCV_BUILDER.exception.DpsCvBuilderValidationException;
 import dpscvbuilder.com.DPSCV_BUILDER.util.response.StandardResponse;
 import io.jsonwebtoken.security.SignatureException;
 import org.springframework.http.HttpStatus;
@@ -17,8 +17,8 @@ import static dpscvbuilder.com.DPSCV_BUILDER.util.enums.ErrorEnum.ERROR_INVALID_
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler({DreamHireException.class})
-    public ResponseEntity<StandardResponse> handleDreamHireException(DreamHireException ex){
+    @ExceptionHandler({DpsCvBuilderException.class})
+    public ResponseEntity<StandardResponse> handleDreamHireException(DpsCvBuilderException ex){
 
         ErrorDto errorDto = ErrorDto.generateFromDreamHireException(ex);
         HttpStatus httpStatus = ex.getErrorEnum().getHttpStatus() != null ? ex.getErrorEnum().getHttpStatus() : HttpStatus.BAD_REQUEST;
@@ -33,8 +33,8 @@ public class GlobalExceptionHandler {
         );
     }
 
-    @ExceptionHandler({DreamHireValidationException.class})
-    public ResponseEntity<StandardResponse> handleDreamHireValidationException(DreamHireValidationException ex){
+    @ExceptionHandler({DpsCvBuilderValidationException.class})
+    public ResponseEntity<StandardResponse> handleDreamHireValidationException(DpsCvBuilderValidationException ex){
 
         ErrorDto errorDto = ErrorDto.generateFromDreamHireException(ex);
         HttpStatus httpStatus = ex.getErrorEnum().getHttpStatus() != null? ex.getErrorEnum().getHttpStatus() : HttpStatus.BAD_REQUEST;

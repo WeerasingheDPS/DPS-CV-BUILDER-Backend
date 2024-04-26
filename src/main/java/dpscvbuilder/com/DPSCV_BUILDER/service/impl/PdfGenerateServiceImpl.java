@@ -1,45 +1,61 @@
 package dpscvbuilder.com.DPSCV_BUILDER.service.impl;
 
+import dpscvbuilder.com.DPSCV_BUILDER.exception.DpsCvBuilderException;
+import dpscvbuilder.com.DPSCV_BUILDER.service.PdfGenerateService;
+import dpscvbuilder.com.DPSCV_BUILDER.util.enums.ErrorEnum;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.html2pdf.resolver.font.DefaultFontProvider;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.pdf.PdfWriter;
-import dpscvbuilder.com.DPSCV_BUILDER.exception.DreamHireException;
-import dpscvbuilder.com.DPSCV_BUILDER.service.PdfGenerateService;
-import dpscvbuilder.com.DPSCV_BUILDER.util.enums.ErrorEnum;
-import org.springframework.stereotype.Service;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
+import com.itextpdf.io.source.ByteArrayOutputStream;
+import com.itextpdf.kernel.pdf.PdfWriter;
 
 @Service
+@Slf4j
 public class PdfGenerateServiceImpl implements PdfGenerateService {
-    public String generate(String resume) {
+
+    public byte[] generate(String processedHtml) {
+
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        try{
-            FileOutputStream fout = new FileOutputStream(new File("C:/repo/Resume.pdf"));
-            Document document = new Document(PageSize.A4);
-            PdfWriter pdfWriter = PdfWriter.getInstance(document,byteArrayOutputStream);
+
+        String url = "";
+
+        try {
+
+            PdfWriter pdfwriter = new PdfWriter(byteArrayOutputStream);
+
+            DefaultFontProvider defaultFont = new DefaultFontProvider(false, true, false);
+
             ConverterProperties converterProperties = new ConverterProperties();
-            DefaultFontProvider defaultFontProvider = new DefaultFontProvider();
-            converterProperties.setFontProvider(defaultFontProvider);
 
-            HtmlConverter.convertToPdf(resume, pdfWriter.getOs(), converterProperties);
+            converterProperties.setFontProvider(defaultFont);
 
-            byteArrayOutputStream.writeTo(fout);
+            HtmlConverter.convertToPdf(processedHtml, pdfwriter, converterProperties);
+
+
+//            BlobId blobId = BlobId.of("dps-cv-builder-01.appspot.com", "dps-cv-builder/resum2.pdf");
+//            BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("application/pdf").build();
+//            Credentials credentials = GoogleCredentials.fromStream(new FileInputStream("src/main/resources/dps-cv-builder-01-firebase-adminsdk-l252i-eb190a6f75.json"));
+//            Storage storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
+//            Blob blob = storage.create(blobInfo, byteArrayOutputStream.toByteArray());
+
             byteArrayOutputStream.close();
+
             byteArrayOutputStream.flush();
-            fout.close();
 
-            return "Success: PDF generated at " + "resume";
-        } catch (Exception e) {
-            // Log the exception for debugging purposes
-            //e.printStackTrace();
 
-            throw new DreamHireException(ErrorEnum.ERROR_NOT_FOUND, e.getMessage());
+           // url = blob.getMediaLink();
+
+            log.info(url);
+
+        } catch(Exception ex) {
+            log.info(ex.getMessage());
+            throw new DpsCvBuilderException(ErrorEnum.ERROR_PDF_GENERATE_ERROR, ex.getMessage());
         }
+
+         return byteArrayOutputStream.toByteArray();
+
     }
 }

@@ -1,100 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th ="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Styled Links</title>
-    <link rel="stylesheet" href="styles.css">
+    <!--    <link th:rel="stylesheet" th:href="styles.css">-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" rel="stylesheet">
-     <!-- Bootstrap Icons library -->
+    <!-- Bootstrap Icons library -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-   
+
 </head>
 <body>
-    <div class="main-con">
-        <div class="personal-main-con">
-            <div class="personal-details-con">
-                <div class="name">
-                    <h1 >Dulanjana Weerasinghe</h1>
-                </div>
-                
-                <div class="job-title">
-                    <h2>Software Engineer Intern</h2>
-                </div>
+<div style="
+        width: 100%;
+        box-sizing: border-box;
+       ">
+    <div style="
+            display: flex;
+            flex-direction: row;
+            width: 100%;">
 
-                <div class="personal-sub-con">
-                    <i class="bi bi-envelope-fill icon"></i>
-                    <p>dpsweerasinghe@gmail.com</p>
-                </div>
+        <div style="width: 80%;">
 
-                <div class="personal-sub-con">
-                    <i class="bi bi-telephone-fill icon"></i>
-                    <p>0712905022</p>
-                </div>
-
-                <div class="personal-sub-con">
-                    <i class="bi bi-geo-alt-fill icon"></i>
-                    <p>Galhena, Bathigama, Dickwella, Sri Lanka.</p>
-                </div>
-
-                <div class="personal-sub-con">
-                    <i class="bi bi-github icon"></i>
-                    <a class="link" href="www.google.com">WeerasingheDPS</a>
-                </div>
-
-                <div class="personal-sub-con">
-                    <i class="bi bi-linkedin icon"></i>
-                    <a class="link">Dulanjana Weerasinghe</a>
-                </div>
-
-                <div class="personal-sub-con">
-                    <i class="bi bi-twitter icon"></i>
-                    <a class="link">Dula98</a>
-                </div>
+            <div  th:if="${resume.personalData.name != null}">
+                <h1 th:text = "${resume.personalData.name}" ></h1>
             </div>
-            <div class="photo-con">
-                <img src="dula.png" class="photo">
+
+            <div style="margin-bottom: 5px" th:if="${resume.personalData.name != null}">
+                <h2 th:text = "${resume.personalData.jobTitle}"></h2>
+            </div>
+
+            <div >
+                <div style="white-space: nowrap; display: inline-block; margin-right: 10px; margin-bottom: 8px;"  th:if="${resume.personalData.email != null}">
+                    <i class="bi bi-envelope-fill"></i>
+                    <span style="margin-left: 3px;" th:text = "${resume.personalData.email}"></span>
+                </div>
+
+                <div style="white-space: nowrap; display: inline-block; margin-right: 10px; margin-bottom: 10px;"  th:if="${resume.personalData.phone != null}">
+                    <i class="bi bi-telephone-fill"></i>
+                    <span style="margin-left: 3px;" th:text = "${resume.personalData.phone}"></span>
+                </div>
+
+                <div style="white-space: nowrap; display: inline-block; margin-right: 10px; margin-bottom: 10px;" th:if="${resume.personalData.address != null}">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span style="margin-left: 3px;" th:text = "${resume.personalData.address}"></span>
+                </div>
+
+                <div style="white-space: nowrap; display: inline-block; margin-right: 10px; margin-bottom: 10px;" th:if="${resume.personalData.githubLabel != null}">
+                    <i class="bi bi-github"></i>
+                    <a style="margin-left: 3px; color: #000; text-decoration: none;" th:href="${resume.personalData.github != null ? resume.personalData.github : null }" th:text = "${resume.personalData.githubLabel}"></a>
+                </div>
+
+                <div style="white-space: nowrap; display: inline-block; margin-right: 10px; margin-bottom: 10px;" th:if="${resume.personalData.linkedInLabel != null}">
+                    <i class="bi bi-linkedin"></i>
+                    <a style="margin-left: 3px; color: #000; text-decoration: none;" th:href="${resume.personalData.linkedIn != null ? resume.personalData.linkedIn : null }" th:text = "${resume.personalData.linkedInLabel}"></a>
+                </div>
+
+                <div style="white-space: nowrap; display: inline-block; margin-right: 10px; margin-bottom: 10px;"  th:if="${resume.personalData.twitterLabel != null}">
+                    <i class="bi bi-twitter"></i>
+                    <a style="margin-left: 3px; color: #000; text-decoration: none;" th:href="${resume.personalData.twitter != null ? resume.personalData.twitter : null }" th:text = "${resume.personalData.twitterLabel}"></a>
+                </div>
             </div>
         </div>
-        <div class="content-con">
-            <h3 class="content-main-title">Education</h3>
-
-            <div class="hr2"></div>
-
-            <div class="content-main-con">
-                <div class="con-title-con">
-                    <h5 class="content-title">BSc in Computer Science</h5>
-                    <p>University of Colombo School of Computing</p>
-                </div>
-                
-                <div class="date-city">
-                    <div class="date">
-                        2019 - 2023
-                    </div>
-                    <div class="city">
-                        Colombo, Sri Lanka.
-                    </div>
-                </div>
-            </div>
-            <div class="description-con">
-                <p>Dedicated third-year Computer Science student with a fervent drive for exceptional programming,
-                    machine learning, and web development skills. Adept at innovative problem-solving and deeply
-                    enthusiastic about coding. Aspiring Software Engineer with a passion for continuous learning, travel,
-                    and exploring new horizons. Eager to fuse these interests into a successful career.</p>
-            </div>
-            <div da class="quilt-con" id="quill">
-            </div>
+        <div style="width:20%;">
+            <img style="
+                        width: 150px;
+                        height: 150px;
+                        border-radius: 50%;"
+                 th:src="${resume.personalData.profilePicture}">
         </div>
     </div>
-    <script>
-        // Get the HTML content from Quill and set it to the output div
-        function updateOutput() {
-            var html = '<p>Hello!dnewfoforfo</p>';
-            document.getElementById('quill').innerHTML = html;
-        }
-        // Initial update
-        updateOutput();
-    </script>
+    <div th:each = "main: ${resume.mainContents}" style="width: 100%; margin-top: 10px">
+        <p style="margin-bottom: 2px; font-weight: bold; font-size: larger;" th:text = "${main.contentTitle != null ? main.contentTitle : null }"></p>
 
+        <div style="height: 2px; background-color: #000; margin: 0; margin-bottom: 20px"></div>
+
+        <div style="width: 100%;" th:each = "sub: ${main.subContents}">
+            <div style=" display: flex; flex-direction: row; width: 100%; margin-bottom: 0">
+                <div style="width: 75%">
+                    <p style="margin: 0; font-weight: bold; font-size: larger;" th:text = "${sub.title != null ? sub.title : null }"></p>
+                    <p th:text = "${sub.subTitle != null ? sub.subTitle : null }"></p>
+                </div>
+                <div style="width: 25%">
+                    <div style="margin: 0; display: flex; justify-content: end;">
+                        <p style="margin: 0; display: inline-block" th:if="${sub.startDate != null}" th:text="${ sub.showStartYearOnly ? #dates.format(sub.startDate, 'YYYY') : #dates.format(sub.startDate, 'MMMM YYYY') }"></p>
+                        <p style="margin: 0; display: inline-block" th:if="${(sub.startDate != null && sub.endDate != null) || sub.present}">&nbsp; - &nbsp;</p>
+                        <p style="margin: 0; display: inline-block" th:if="${sub.endDate != null || sub.present }" th:text="${sub.present ? 'Present' : (sub.showEndYearOnly? #dates.format(sub.endDate, 'YYYY'): #dates.format(sub.endDate, 'MMMM YYYY') )}"></p>
+                    </div>
+                    <div style="margin: 0; display: flex; justify-content: end;" >
+                        <p style="margin: 0; display: inline-block" th:text = "${sub.city != null ? sub.city : null }"></p>
+                        <p style="margin: 0; display: inline-block" th:if="${sub.city != null && sub.country != null}">&nbsp; - &nbsp;</p>
+                        <p style="margin: 0; display: inline-block" th:text = "${sub.country != null ? sub.country : null }"></p>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%; margin: 0;" th:utext="${sub.description}"> </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

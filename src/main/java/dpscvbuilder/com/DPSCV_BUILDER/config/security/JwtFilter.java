@@ -1,7 +1,7 @@
 package dpscvbuilder.com.DPSCV_BUILDER.config.security;
 
 
-import dpscvbuilder.com.DPSCV_BUILDER.exception.DreamHireException;
+import dpscvbuilder.com.DPSCV_BUILDER.exception.DpsCvBuilderException;
 import dpscvbuilder.com.DPSCV_BUILDER.service.JwtService;
 import dpscvbuilder.com.DPSCV_BUILDER.util.enums.ErrorEnum;
 import jakarta.servlet.FilterChain;
@@ -43,7 +43,7 @@ public class JwtFilter extends OncePerRequestFilter {
                 authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authToken);
             }else {
-                throw new DreamHireException(ErrorEnum.ERROR_EXPIRE_TOKEN);
+                throw new DpsCvBuilderException(ErrorEnum.ERROR_EXPIRE_TOKEN);
             }
         }
         filterChain.doFilter(request, response);

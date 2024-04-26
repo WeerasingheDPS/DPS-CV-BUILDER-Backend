@@ -9,7 +9,7 @@
 }
 
 .main-con{
-    width: 1200px;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
 }
 .personal-details-con{
     width: 70%;
-    display: flexbox;
+    display: flex;
     flex-direction: row;
    }
 .name{
@@ -43,7 +43,7 @@
     border-radius: 50%;
 }
 .personal-sub-con{
-    display: flex;
+  //  display: flex;
     flex-direction: row;
     display: inline-flex;
     margin-right: 10px;
@@ -96,13 +96,11 @@
 
 .date{
     display: block;
-    display: flex;
     justify-content: end;
 }
 
 .city{
     display: block;
-    display: flex;
     justify-content: end;
 }
 

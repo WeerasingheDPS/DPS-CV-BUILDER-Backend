@@ -2,7 +2,7 @@ package dpscvbuilder.com.DPSCV_BUILDER.service.impl;
 
 import dpscvbuilder.com.DPSCV_BUILDER.dto.CvCreatorDto;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.CvCreatorRegisterDto;
-import dpscvbuilder.com.DPSCV_BUILDER.exception.DreamHireException;
+import dpscvbuilder.com.DPSCV_BUILDER.exception.DpsCvBuilderException;
 import dpscvbuilder.com.DPSCV_BUILDER.model.CvCreator;
 import dpscvbuilder.com.DPSCV_BUILDER.repository.UserRepo;
 import dpscvbuilder.com.DPSCV_BUILDER.service.CvCreatorService;
@@ -25,7 +25,7 @@ public class CvCreatorServiceImpl implements CvCreatorService {
     @Override
     public CvCreatorDto register(CvCreatorRegisterDto registerDto) {
         if(userRepo.existsByEmailAndUserType(registerDto.getEmail(), "ROLE_" + UserType.CV_CREATOR)){
-            throw new DreamHireException(ErrorEnum.ERROR_DUPLICATE_EMAIL,
+            throw new DpsCvBuilderException(ErrorEnum.ERROR_DUPLICATE_EMAIL,
                     "You are already registered with this email: "
                             + registerDto.getEmail())
                     ;

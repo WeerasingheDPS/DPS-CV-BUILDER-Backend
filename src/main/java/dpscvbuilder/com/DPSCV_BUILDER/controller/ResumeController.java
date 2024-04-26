@@ -1,10 +1,8 @@
 package dpscvbuilder.com.DPSCV_BUILDER.controller;
 
 
-import dpscvbuilder.com.DPSCV_BUILDER.dto.request.ResumeDownloadRequestDto;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.resume.CvCreatorMainContentDto;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.resume.CvCreatorPersonalDataRequestDto;
-import dpscvbuilder.com.DPSCV_BUILDER.dto.request.resume.ResumeDto;
 import dpscvbuilder.com.DPSCV_BUILDER.model.Resume;
 import dpscvbuilder.com.DPSCV_BUILDER.service.ResumeService;
 import dpscvbuilder.com.DPSCV_BUILDER.util.constant.UrlConstant;
@@ -61,12 +59,12 @@ public class ResumeController {
     }
 
     @PostMapping("/download/{userId}")
-    public ResponseEntity<StandardResponse> downloadResume(@PathVariable String userId, @RequestBody ResumeDownloadRequestDto resume) {
-        String message = resumeService.download(resume.getResume());
+    public ResponseEntity<StandardResponse> downloadResume(@PathVariable String userId, @RequestBody Resume resume) {
+        byte[] resumePdf = resumeService.download(resume, userId);
         return new ResponseEntity<StandardResponse>(
                 StandardResponse
                         .builder()
-                        .result(message)
+                        .result(resumePdf)
                         .success(true)
                         .build(), HttpStatus.CREATED
         );

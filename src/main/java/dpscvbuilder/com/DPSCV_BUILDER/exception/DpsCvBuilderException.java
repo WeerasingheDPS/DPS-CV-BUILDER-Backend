@@ -9,7 +9,7 @@ import org.springframework.util.StringUtils;
 @Getter
 @Setter
 @AllArgsConstructor
-public class DreamHireException extends RuntimeException{
+public class DpsCvBuilderException extends RuntimeException{
 
     private String errorCode;
 
@@ -17,19 +17,19 @@ public class DreamHireException extends RuntimeException{
 
     private ErrorEnum errorEnum;
 
-   public DreamHireException(String message){
+   public DpsCvBuilderException(String message){
        super(message);
    }
 
-   public DreamHireException(String message, Throwable throwable){
+   public DpsCvBuilderException(String message, Throwable throwable){
        super(message, throwable);
    }
 
-   public DreamHireException(ErrorEnum dreamHireErrorEnum){
+   public DpsCvBuilderException(ErrorEnum dreamHireErrorEnum){
        this(dreamHireErrorEnum, null);
    }
 
-   public DreamHireException(ErrorEnum dreamHireErrorEnum, String customDescription){
+   public DpsCvBuilderException(ErrorEnum dreamHireErrorEnum, String customDescription){
        this.errorEnum = dreamHireErrorEnum;
        if (StringUtils.hasText(customDescription)){
            this.errorEnum.setDescription(customDescription);
