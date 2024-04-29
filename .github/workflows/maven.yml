@@ -40,13 +40,13 @@ jobs:
             username: ${{ secrets.DOCKER_USERNAME }}
             password: ${{ secrets.DOCKER_PASSWORD }}
 
-  # deploy:
-  #   needs: build
-  #   runs-on: [ip-172-31-39-20]
-  #   steps:
-  #     - name: Pull image from docker hub
-  #       run: docker pull dpsweerasinghe/dps_cv_builder:latest
-  #     - name: Delete old container
-  #       run: docker rm -f dps_cv_builder
-  #     - name: Run Docker container
-  #       run: docker run -d -p 8080:8080 --name dps_cv_builder dpsweerasinghe/dps_cv_builder
+  deploy:
+     needs: build
+     runs-on: [ip-172-31-39-20]
+     steps:
+       - name: Pull image from docker hub
+         run: docker pull dpsweerasinghe/dps_cv_builder:latest
+       - name: Delete old container
+         run: docker rm -f dps_cv_builder
+       - name: Run Docker container
+         run: docker run -d -p 8080:8080 --name dps_cv_builder dpsweerasinghe/dps_cv_builder
