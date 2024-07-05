@@ -1,21 +1,24 @@
 package dpscvbuilder.com.DPSCV_BUILDER.model;
 
+import com.google.auto.value.AutoValue;
 import dpscvbuilder.com.DPSCV_BUILDER.model.ro.resume.MainContent;
 import dpscvbuilder.com.DPSCV_BUILDER.model.ro.resume.PersonalData;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.NaturalIdCache;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Document(collection = "resumes")
-public class Resume extends BaseEntity {
+public class Resume{
 
     private String id;
 

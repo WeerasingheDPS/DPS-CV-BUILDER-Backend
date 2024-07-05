@@ -4,9 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -14,10 +13,12 @@ import java.time.LocalDateTime;
 
 @Data
 @Document(collection = "cv_creators")
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CvCreator extends User {
+public class CvCreator {
 
+    private String email;
 
     private String title;
 
@@ -53,5 +54,7 @@ public class CvCreator extends User {
     private String minSalary;
 
     private String maxSalary;
+
+    private String userType;
 
 }

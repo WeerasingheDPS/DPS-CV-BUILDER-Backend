@@ -1,6 +1,7 @@
 package dpscvbuilder.com.DPSCV_BUILDER.config.security;
 
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,14 +25,16 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@RequiredArgsConstructor
 public class AuthConfig {
 
-    @Autowired
-    private JwtFilter jwtFilter;
+    private final JwtFilter jwtFilter;
+
+    private final CustomUserDetailsService customUserDetailsService;
 
     @Bean
     public UserDetailsService userDetailsService(){
-        return new CustomUserDetailsService();
+        return customUserDetailsService;
     }
 
     @Bean
@@ -41,7 +44,9 @@ public class AuthConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                // .csrf().disable()
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/api/v1/auth/login", "/api/v1/auth/refresh_token", "/api/v1/cvCreator/register", "/welcome", "api/v1/resume/download/**").permitAll()
+                        .requestMatchers("/api/v1/auth/login", "/api/v1/auth/refresh_token",
+                                "/api/v1/cvCreator/register", "/api/v1/auth/confirm",
+                                "/welcome", "api/v1/resume/download/**").permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .httpBasic();

@@ -53,4 +53,12 @@ public class AuthController {
                         .build(),
                 HttpStatus.OK);
     }
+
+    @GetMapping( "/confirm")
+    public ResponseEntity<String> verifyEmail(@RequestParam String token ){
+        String message = authService.verifyEmail(token);
+        return new ResponseEntity<>(
+                message,
+                HttpStatus.OK);
+    }
 }

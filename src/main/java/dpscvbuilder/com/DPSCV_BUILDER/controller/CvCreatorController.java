@@ -1,6 +1,7 @@
 package dpscvbuilder.com.DPSCV_BUILDER.controller;
 
 import dpscvbuilder.com.DPSCV_BUILDER.dto.CvCreatorDto;
+import dpscvbuilder.com.DPSCV_BUILDER.dto.SystemUserDto;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.request.CvCreatorRegisterDto;
 import dpscvbuilder.com.DPSCV_BUILDER.service.CvCreatorService;
 import dpscvbuilder.com.DPSCV_BUILDER.util.constant.UrlConstant;
@@ -21,11 +22,11 @@ public class CvCreatorController {
 
     @PostMapping("/register")
     public ResponseEntity<StandardResponse> register(@RequestBody CvCreatorRegisterDto registerDto) {
-        CvCreatorDto cvCreator = cvCreatorService.register(registerDto);
+        SystemUserDto systemUserDto = cvCreatorService.register(registerDto);
         return new ResponseEntity<StandardResponse>(
                 StandardResponse
                         .builder()
-                        .result(cvCreator)
+                        .result(systemUserDto)
                         .success(true)
                         .build(), HttpStatus.CREATED
         );

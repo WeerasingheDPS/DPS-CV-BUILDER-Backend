@@ -13,4 +13,6 @@ public interface AuthService {
     String refreshToken(RefreshTokenRequest refreshToken);
 
     String changePassword(ChangePasswordRequestDto changePasswordRequest, String userId);
+
+    String verifyEmail(String token);
 }
