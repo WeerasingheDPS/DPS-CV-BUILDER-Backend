@@ -5,12 +5,14 @@ import dpscvbuilder.com.DPSCV_BUILDER.dto.request.RefreshTokenRequest;
 import dpscvbuilder.com.DPSCV_BUILDER.dto.response.LoginResponseDto;
 import dpscvbuilder.com.DPSCV_BUILDER.service.AuthService;
 import dpscvbuilder.com.DPSCV_BUILDER.util.response.StandardResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
+@Slf4j
 @RestController
 @RequestMapping(path = "api/v1/auth")
 public class AuthController {
@@ -21,6 +23,7 @@ public class AuthController {
     @PostMapping( "/login")
     public ResponseEntity<StandardResponse> loginUser(@RequestBody LoginRequest loginRequest){
         LoginResponseDto loginResponse = authService.login(loginRequest);
+        log.info("Login Success for {} ", loginResponse.toString());
         return new ResponseEntity<StandardResponse>(
                 StandardResponse
                         .builder()
