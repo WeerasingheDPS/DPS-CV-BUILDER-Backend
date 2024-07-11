@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 @RequiredArgsConstructor
@@ -65,8 +66,19 @@ public class CvCreatorServiceImpl implements CvCreatorService {
         System.out.println(confirmationToken.toString());
 
         //send verify email
-        sendAccountVerificationEmail(confirmationToken);
+        sendAsyncEmail(confirmationToken);
+
         return systemUserDto;
+    }
+
+    private void sendAsyncEmail(ConfirmationToken confirmationToken) {
+        CompletableFuture.runAsync(() -> sendAccountVerificationEmail(confirmationToken))
+                .thenRun(() -> log.info("Verification email sent successfully for:{}", confirmationToken.getUserEmail()))
+                .exceptionally(ex -> {
+                    ex.printStackTrace();
+                    log.info("Verification email sent fail for:{}", confirmationToken.getUserEmail());
+                    return null;
+                });
     }
 
     private void sendAccountVerificationEmail(ConfirmationToken confirmationToken) {
@@ -77,6 +89,7 @@ public class CvCreatorServiceImpl implements CvCreatorService {
         }
 
     }
+
 
     private ConfirmationToken createConfirmationToken(String email) {
 
