@@ -41,7 +41,7 @@ public class CvCreatorServiceImpl implements CvCreatorService {
     private final EmailService emailService;
     @Override
     public SystemUserDto register(CvCreatorRegisterDto registerDto) {
-        if(userRepo.existsByEmailAndUserType(registerDto.getEmail(), "ROLE_" + UserType.CV_CREATOR)){
+        if(userRepo.existsByEmailAndUserType(registerDto.getEmail(), UserType.ROLE_CV_CREATOR.toString())){
             throw new DpsCvBuilderException(ErrorEnum.ERROR_DUPLICATE_EMAIL,
                     "You are already registered with this email: "
                             + registerDto.getEmail())
@@ -50,14 +50,14 @@ public class CvCreatorServiceImpl implements CvCreatorService {
         // save system user
         SystemUser systemUser = new SystemUser();
         systemUser.setEmail(registerDto.getEmail());
-        systemUser.setUserType("ROLE_" + UserType.CV_CREATOR);
+        systemUser.setUserType(UserType.ROLE_CV_CREATOR);
         systemUser.setPassword(passwordEncoder.encode(registerDto.getPassword()));
         SystemUser savedSystemUser = userRepo.save(systemUser);
 
         //save cv creator
         CvCreator cvCreator = new CvCreator();
         cvCreator.setEmail(registerDto.getEmail());
-        cvCreator.setUserType("ROLE_" + UserType.CV_CREATOR);
+        cvCreator.setUserType(UserType.ROLE_CV_CREATOR);
         cvCreatorRepo.save(cvCreator);
 
         SystemUserDto systemUserDto = modelMapper.map(savedSystemUser, SystemUserDto.class);

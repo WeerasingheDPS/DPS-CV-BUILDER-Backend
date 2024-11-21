@@ -32,6 +32,9 @@ public class AuthConfig {
 
     private final CustomUserDetailsService customUserDetailsService;
 
+    private final OAuth2LoginSuccessHandler oAuth2LoginSuccessHandler;
+
+
     @Bean
     public UserDetailsService userDetailsService(){
         return customUserDetailsService;
@@ -44,12 +47,20 @@ public class AuthConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                // .csrf().disable()
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/api/v1/auth/login", "/api/v1/auth/refresh_token",
+                        .requestMatchers("/api/v1/auth/login/**", "/api/v1/auth/refresh_token",
                                 "/api/v1/cvCreator/register", "/api/v1/auth/confirm",
                                 "/welcome", "api/v1/resume/download/**").permitAll()
                         .anyRequest().authenticated())
-                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
-                .httpBasic();
+
+                .oauth2Login(login ->
+                    login.loginPage("/api/v1/auth/login/googlelogin").permitAll().successHandler(oAuth2LoginSuccessHandler)
+                  )
+                .formLogin(login ->
+                        login.loginPage("/api/v1/auth/login/googlelogin").permitAll().successHandler(oAuth2LoginSuccessHandler)
+                )
+
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+                //.httpBasic();
         return http.build();
     }
     @Bean

@@ -1,9 +1,8 @@
 package dpscvbuilder.com.DPSCV_BUILDER.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import dpscvbuilder.com.DPSCV_BUILDER.util.enums.UserType;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -55,6 +54,6 @@ public class CvCreator {
 
     private String maxSalary;
 
-    private String userType;
+    private UserType userType;
 
 }

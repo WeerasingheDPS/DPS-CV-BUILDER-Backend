@@ -1,6 +1,8 @@
 package dpscvbuilder.com.DPSCV_BUILDER.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import dpscvbuilder.com.DPSCV_BUILDER.util.enums.RegistrationSource;
+import dpscvbuilder.com.DPSCV_BUILDER.util.enums.UserType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -30,15 +32,18 @@ public class SystemUser implements UserDetails {
     private String password;
 
     @Enumerated(EnumType.STRING)
-    private String userType;
+    private UserType userType;
 
     private Boolean locked=false;
 
     private Boolean enabled=false;
 
+    @Enumerated(EnumType.STRING)
+    private RegistrationSource source;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(userType);
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(userType.toString());
         return Collections.singletonList(authority);
     }
 

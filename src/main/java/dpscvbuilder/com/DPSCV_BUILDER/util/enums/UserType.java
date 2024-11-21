@@ -1,5 +1,5 @@
 package dpscvbuilder.com.DPSCV_BUILDER.util.enums;
 
 public enum UserType {
-     ADMIN, CV_CREATOR
+     ROLE_ADMIN, ROLE_CV_CREATOR
 }
